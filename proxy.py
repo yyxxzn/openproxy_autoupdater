@@ -1,6 +1,7 @@
 import requests
 import json
 import numpy as np
+import csv
 
 def update_proxies(proxy_type):
 
@@ -15,9 +16,11 @@ def update_proxies(proxy_type):
         proxies_data = np.concatenate((proxies_data, np.array(proxies[i]['items'])))
     
     #save CSV
-    np.savetxt("proxies.csv", 
-        proxies_data,
-        delimiter =", ", 
-        fmt ='% s')
+    with open('proxies.csv', 'w') as f:
+      
+    # using csv.writer method from CSV package
+        write = csv.writer(f)
+      
+        write.writerow(proxies_data)
 
 update_proxies('http') #socks4, socks5, http
