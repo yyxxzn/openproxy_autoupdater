@@ -1,4 +1,4 @@
-# openproxy_autoupdater
+# openproxy_to_csv
 Simple python code to obtain proxies and update them from https://openproxy.space/ into a csv file
 
 ## To run it!
